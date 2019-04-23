@@ -1,0 +1,6 @@
+export const ROOM_CODE = 'ROOM_CODE'
+export const ROOM_TITLE = 'ROOM_TITLE'
+export const SHARING = 'SHARING'
+export const NEWMSG = 'NEWMSG'
+export const MSG = 'MSG'
+export const SHAREBET = 'SHAREBET'
