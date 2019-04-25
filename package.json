@@ -12,9 +12,12 @@
     "proto": "pbjs -t json-module -w commonjs -o src/proto/proto.js  src/proto/*.proto"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "protobufjs": "^6.8.8",
+    "qs": "^6.7.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "protobufjs": "^6.8.8",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

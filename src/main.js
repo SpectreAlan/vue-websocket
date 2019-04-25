@@ -4,10 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store/index.js'
-import {initSocket} from './socket/socket.js'
-Vue.prototype.$socket = initSocket()
+import axios from 'axios'
+import qs from 'qs'
 Vue.config.productionTip = false
-
+Vue.prototype.$http = axios
+Vue.prototype.qs = qs
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

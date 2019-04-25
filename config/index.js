@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        // target: 'http://m.abc.com/',//调用接口
+        target: 'http://m.redbull888.com/',//调用接口
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''//‘/api’代替target里面的地址
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

@@ -1,13 +1,31 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
 export default {
-  name: 'App'
+  name: 'App',
+  mounted () {
+    localStorage.getItem('store') && this.$store.replaceState(Object.assign(this.$store.state, JSON.parse(localStorage.getItem('store'))))
+    if (sessionStorage.getItem('isLogin')) {
+      this.socket(true)
+    }
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('store', JSON.stringify(this.$store.state))
+    })
+  },
+  methods: {
+    ...mapMutations({
+      socket: 'SOCKET',
+      msg: 'MSG'
+    }),
+    send () {
+      this.msg()
+    }
+  }
 }
 </script>
 

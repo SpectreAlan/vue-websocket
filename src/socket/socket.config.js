@@ -1,5 +1,5 @@
-import store from '../store/mobile/index'
-import protoRoot from '@/proto/proto'
+import store from '../store/index'
+import protoRoot from '@/socket/proto'
 import protobuf from 'protobufjs'
 export const Model = protoRoot.lookup('framework.Model') // 接口基础配置信息,对应Message.proto
 const Msg = protoRoot.lookup('framework.MessageBody') // 消息配置信息，对应MessageBody.proto

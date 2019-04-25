@@ -2,7 +2,7 @@ import * as webSocket from './socket.config.js'
 import store from '../store/index'
 export function initSocket () {
   let protocol = document.location.protocol === 'http:' ? 'ws' : 'wss'
-  let socket =  new WebSocket(protocol + '://' + document.location.host + '/ws')
+  let socket = new WebSocket(protocol + '://ip:端口/' + protocol)
   socket.binaryType = 'arraybuffer'
   socket.onmessage = response => { // 监听消息动态
     let val = webSocket.onMessage(response)
@@ -23,7 +23,7 @@ export function initSocket () {
     }
   }
   socket.onclose = () => { // socket断线重连
-    socket =new WebSocket(protocol + '://' + document.location.host + '/ws')
+    socket = new WebSocket(protocol + '://' + document.location.host + '/ws')
   }
   socket.onopen = () => { // socket连接以后的callback
     console.log('connect success!')
