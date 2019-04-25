@@ -5,22 +5,24 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import {mapMutations, mapGetters} from 'vuex'
 export default {
   name: 'App',
   mounted () {
     localStorage.getItem('store') && this.$store.replaceState(Object.assign(this.$store.state, JSON.parse(localStorage.getItem('store'))))
-    if (sessionStorage.getItem('isLogin')) {
-      this.socket(true)
+    if (this.isLogin) {
+      this.isLogin(true)
     }
     window.addEventListener('beforeunload', () => {
       localStorage.setItem('store', JSON.stringify(this.$store.state))
     })
   },
+  computed: {
+    ...mapGetters(['isLogin'])
+  },
   methods: {
     ...mapMutations({
-      socket: 'SOCKET',
-      msg: 'MSG'
+      isLogin: 'ISLOGIN'
     }),
     send () {
       this.msg()
