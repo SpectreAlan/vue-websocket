@@ -23,10 +23,7 @@ export default {
   methods: {
     ...mapMutations({
       isLogin: 'ISLOGIN'
-    }),
-    send () {
-      this.msg()
-    }
+    })
   }
 }
 </script>
