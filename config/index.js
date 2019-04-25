@@ -12,8 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        // target: 'http://m.abc.com/',//调用接口
-        target: 'http://m.redbull888.com/',//调用接口
+        target: 'http://abc.com/',//调用接口
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''//‘/api’代替target里面的地址
